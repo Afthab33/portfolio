@@ -1,12 +1,12 @@
 import { createContext, useContext, useEffect, useState } from "react"
 
 const ThemeContext = createContext({
-  theme: "dark",
+  theme: "light", // Changed default value to light
   setTheme: () => null,
   toggleTheme: () => null,
 })
 
-export function ThemeProvider({ children, defaultTheme = "dark", storageKey = "theme" }) {
+export function ThemeProvider({ children, defaultTheme = "light", storageKey = "theme" }) {
   const [theme, setTheme] = useState(() => {
     // Check if theme exists in localStorage
     const storedTheme = localStorage.getItem(storageKey)
@@ -16,15 +16,7 @@ export function ThemeProvider({ children, defaultTheme = "dark", storageKey = "t
       return storedTheme
     }
     
-    // Try to detect system preference
-    if (typeof window !== "undefined") {
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        return "dark"
-      }
-      
-      return "light"
-    }
-    
+    // Always default to light theme instead of checking system preference
     return defaultTheme
   })
 

@@ -108,12 +108,6 @@ export function HeroSection() {
                     </div>
                   )}
                 </div>
-                
-                {/* Floating dot patterns */}
-                <div className="absolute -right-4 top-1/3 w-1.5 h-1.5 bg-primary/60 rounded-full"></div>
-                <div className="absolute -right-7 top-1/3 translate-y-2 w-1 h-1 bg-primary/40 rounded-full"></div>
-                <div className="absolute -left-4 bottom-1/3 w-1.5 h-1.5 bg-primary/60 rounded-full"></div>
-                <div className="absolute -left-7 bottom-1/3 translate-y-2 w-1 h-1 bg-primary/40 rounded-full"></div>
               </div>
             </div>
           </div>
