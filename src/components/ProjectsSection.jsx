@@ -64,17 +64,16 @@ export function ProjectsSection() {
             tags={["YOLOv10", "Gemini 1.5", "Accessibility", "WCAG"]}
             imageUrl="/projects/postera11y/thumbnail.png"
             liveUrl="https://poster-a11y.vercel.app"
-            githubUrl="https://github.com/Afthab33/poster-a11y"
+            githubUrl="https://github.com/Afthab33/poster-evaluation-a11y"
           />
           
-          {/* Additional project cards... */}
           <ProjectCard 
             title="Speech Quest - Speech Learning Platform"
             description="Bilingual speech therapy app built with Angular and Firebase, featuring 7+ interactive games with speech recognition and audio feedback via ElevenLabs API."
             tags={["Angular", "Firebase", "ElevenLabs API", "Speech Recognition"]}
             imageUrl="/projects/speechapp/thumbnail.png"
             liveUrl="https://speechquest.vercel.app"
-            githubUrl="https://github.com/Afthab33/speech-quest"
+            githubUrl="https://github.com/Afthab33/speech-app"
           />
 
           <ProjectCard 
@@ -83,7 +82,7 @@ export function ProjectsSection() {
             tags={["React", "Tailwind CSS", "Firebase", "Redux"]}
             imageUrl="/projects/a11ygame/thumbnail.png"
             liveUrl="https://a11ygamification.vercel.app"
-            githubUrl="https://github.com/Afthab33/a11y-gamification"
+            githubUrl="https://github.com/Afthab33/a11yGame"
           />
           
           <ProjectCard 
@@ -101,7 +100,7 @@ export function ProjectsSection() {
             tags={["JavaScript", "React", "Next.js", "Web Development"]}
             imageUrl="/projects/doctorfinder/thumbnail.png"
             liveUrl="https://capstone2024-five.vercel.app/"
-            githubUrl="https://github.com/Afthab33/doctor-finder"
+            githubUrl="https://github.com/Afthab33/capstone2024"
           />
 
           <ProjectCard 
@@ -119,7 +118,7 @@ export function ProjectsSection() {
             tags={["Data Visualization", "HealthTech", "Wearables", "D3.js"]}
             imageUrl="/projects/sleepinsights/thumbnail.png"
             liveUrl="https://sdv-project-website.vercel.app/"
-            githubUrl="https://github.com/Afthab33/sleep-insights"
+            githubUrl="https://github.com/Afthab33/sdv-project-website"
           />
           
           <ProjectCard 
