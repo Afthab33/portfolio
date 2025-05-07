@@ -1,18 +1,40 @@
 import { Code2, Brain, Database, Cloud, Workflow, Cpu } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 export function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState(0);
+  const sectionRef = useRef(null);
+  
+  // Add fade-in animation when section comes into view
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in', 'fade-in', 'duration-700');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
   
   const skillCategories = [
     {
-      icon: <Code2 className="h-5 w-5" />,
+      icon: <Code2 className="h-4 w-4 md:h-5 md:w-5" />,
       title: "Programming Languages",
       skills: ["Python", "JavaScript", "Java", "C/C++", "SQL", "HTML/CSS"]
     },
     {
-      icon: <Brain className="h-5 w-5" />,
-      title: "AI & Machine Learning",
+      icon: <Brain className="h-4 w-4 md:h-5 md:w-5" />,
+      title: "AI & ML",
+      mobileTitle: "AI & ML",
+      fullTitle: "AI & Machine Learning",
       skills: [
         "Scikit-Learn",
         "TensorFlow",
@@ -23,8 +45,10 @@ export function SkillsSection() {
       ]
     },
     {
-      icon: <Database className="h-5 w-5" />,
-      title: "Data & Visualization",
+      icon: <Database className="h-4 w-4 md:h-5 md:w-5" />,
+      title: "Data",
+      mobileTitle: "Data",
+      fullTitle: "Data & Visualization",
       skills: [
         "Pandas",
         "NumPy",
@@ -35,8 +59,10 @@ export function SkillsSection() {
       ]
     },
     {
-      icon: <Workflow className="h-5 w-5" />,
-      title: "Web & App Development",
+      icon: <Workflow className="h-4 w-4 md:h-5 md:w-5" />,
+      title: "Web Dev",
+      mobileTitle: "Web Dev",
+      fullTitle: "Web & App Development",
       skills: [
         "React",
         "Next.js",
@@ -49,7 +75,7 @@ export function SkillsSection() {
       ]
     },
     {
-      icon: <Cloud className="h-5 w-5" />,
+      icon: <Cloud className="h-4 w-4 md:h-5 md:w-5" />,
       title: "Cloud",
       skills: [
         "AWS",
@@ -61,8 +87,10 @@ export function SkillsSection() {
       ]
     },
     {
-      icon: <Cpu className="h-5 w-5" />,
-      title: "Specialized Tools & Tech",
+      icon: <Cpu className="h-4 w-4 md:h-5 md:w-5" />,
+      title: "Specialized",
+      mobileTitle: "Tools",
+      fullTitle: "Specialized Tools & Tech",
       skills: [
         "Accessibility (WCAG)",
         "Speech Recognition",
@@ -75,42 +103,69 @@ export function SkillsSection() {
   ];
 
   return (
-    <section id="skills" className="py-16">
+    <section 
+      id="skills" 
+      className="py-8 md:py-10"
+      aria-labelledby="skills-heading"
+    >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
-          <p className="text-primary font-medium uppercase tracking-wider mb-2">Skills</p>
-          <h2 className="text-3xl font-semibold mb-4">Technical Expertise</h2>
+        <div className="text-center mb-6 md:mb-10">
+          <p className="text-primary font-medium uppercase tracking-wider text-xs md:text-sm mb-1 md:mb-2" aria-hidden="true">
+            Skills
+          </p>
+          <h2 id="skills-heading" className="text-2xl md:text-3xl font-semibold mb-3 md:mb-4">
+            Technical Expertise
+          </h2>
         </div>
         
-        {/* Horizontal category tabs */}
-        <div className="flex items-center justify-center flex-wrap gap-2 mb-8">
+        {/* Horizontal scrollable category tabs for mobile */}
+        <div 
+          className="flex items-center justify-start md:justify-center gap-1.5 md:gap-2 mb-6 md:mb-8 overflow-x-auto pb-2 scrollbar-hide"
+          role="tablist"
+          aria-label="Skill categories"
+        >
           {skillCategories.map((category, index) => (
             <button
               key={index}
+              id={`tab-${index}`}
               onClick={() => setActiveCategory(index)}
-              className={`px-4 py-2 rounded-full flex items-center gap-2 transition-all ${
+              className={`px-2.5 md:px-4 py-1.5 md:py-2 rounded-full flex items-center gap-1.5 md:gap-2 transition-all whitespace-nowrap text-xs md:text-sm flex-shrink-0 ${
                 activeCategory === index
                   ? 'bg-primary/10 text-primary font-medium border border-primary/20'
                   : 'bg-secondary/40 text-muted-foreground hover:bg-secondary'
               }`}
+              role="tab"
+              aria-selected={activeCategory === index}
+              aria-controls={`tabpanel-${index}`}
             >
               {category.icon}
-              {category.title}
+              <span className="md:hidden">{category.mobileTitle || category.title}</span>
+              <span className="hidden md:inline">{category.fullTitle || category.title}</span>
             </button>
           ))}
         </div>
         
-        {/* Skills display */}
-        <div className="max-w-5xl mx-auto overflow-hidden rounded-xl border border-primary/10 transition-all">
-          <div className="bg-card p-6 h-full">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        {/* Skills display - more responsive grid */}
+        <div 
+          ref={sectionRef}
+          className="max-w-5xl mx-auto overflow-hidden rounded-xl border border-primary/10 transition-all"
+          role="tabpanel"
+          id={`tabpanel-${activeCategory}`}
+          aria-labelledby={`tab-${activeCategory}`}
+        >
+          <div className="bg-card p-4 md:p-6 h-full">
+            <h3 className="sr-only">
+              {skillCategories[activeCategory].fullTitle || skillCategories[activeCategory].title} Skills
+            </h3>
+            
+            <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
               {skillCategories[activeCategory].skills.map((skill, index) => (
                 <div 
                   key={index}
-                  className="flex items-center gap-2 bg-secondary/30 rounded-lg p-3 border border-border/30 hover:border-primary/20 hover:bg-primary/5 transition-all"
+                  className="flex items-center gap-2 bg-secondary/30 rounded-lg p-2 md:p-3 border border-border/30 hover:border-primary/20 hover:bg-primary/5 transition-all"
                 >
-                  <div className="w-2 h-2 rounded-full bg-primary/70"></div>
-                  <span className="text-sm font-medium">{skill}</span>
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary/70" aria-hidden="true"></div>
+                  <span className="text-xs md:text-sm font-medium">{skill}</span>
                 </div>
               ))}
             </div>
