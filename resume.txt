@@ -1,0 +1,81 @@
+Aftab Hussain
+📧 afthabhussain33@gmail.com | 📞 +1-9406296544 | LinkedIn: aftabhussain33 | GitHub: Afthab33
+
+Experience
+University of North Texas – Denton, TX
+Teaching Assistant – Software Engineering Course
+January 2025 – Present
+
+Mentored 60+ students across 10+ teams, guiding them through Agile sprints and the full Software Development Life Cycle (SDLC).
+
+Evaluated 100+ assignments and projects, delivering feedback to improve code quality and design.
+
+Led 8–10 weekly support sessions, boosting sprint velocity and improving on-time milestone completion by 25%.
+
+Research Assistant – AI Ethics and Accessibility
+August 2024 – December 2024
+
+Researched accessibility challenges by analyzing 100K+ mobile app reviews from Play Store and Reddit.
+
+Used Large Language Models (LLMs) to classify reviews into key accessibility-related categories.
+
+Contributed structured datasets and insights to support AI-driven inclusive design solutions.
+
+CrimsonLogic – Software Developer Intern, Hyderabad, India
+January 2023 – June 2023
+
+Contributed to e-government licensing portals by building scalable backend services and 20+ dynamic e-form modules using Java and Spring, streamlining application workflows.
+
+Improved frontend form validations and UI components, reducing user input errors by 30% and improving submission success rates.
+
+Projects
+Project-H: AI-Powered Health & Fitness Platform
+www.projhealth.com | Jan 2025 – Present
+
+Built a personalized health platform using React, Tailwind, Node.js, and OpenAI, serving 100+ users with 90%+ satisfaction.
+
+Created “Oats,” an AI coach powered by OpenAI, enabling 1,000+ personalized responses on fitness, nutrition.
+
+Integrated Apple Watch and WHOOP APIs to analyze 20K+ biometric data points for sleep and fitness insights.
+
+Trained ML models (classification & regression) to predict restfulness and REM/deep sleep using behavioral data.
+
+Designed user questionnaires, deployed scalable architecture, and achieved sub-second GenAI response times.
+
+Poster Accessibility Evaluation Tool
+poster-a11y.vercel.app | Feb 2025 – April 2025
+
+Developed a web app leveraging YOLOv10 and Gemini 1.5 Flash to assess academic posters for accessibility, addressing key WCAG compliance metrics.
+
+Delivered detailed reports with actionable insights on contrast, fonts, image quality, and layout, improving inclusive design for 100+ uploaded posters.
+
+A11yGame – Accessibility Game Portal
+a11ygamification.vercel.app | Sep 2024 – Feb 2025
+
+Designed and built a multi-game accessibility learning portal using React, Tailwind CSS, Firebase, and Redux, used by 200+ UNT students to engage with A11y concepts interactively.
+
+Implemented dynamic quiz popups across all games, resulting in a 40% boost in accessibility awareness and engagement, measured through usage data and feedback surveys.
+
+Speech Quest – Interactive Speech Learning Platform
+speechquest.vercel.app | Feb 2025 – May 2025
+
+Contributed to the development of Speech Quest, a bilingual speech therapy app built with Angular and Firebase, supporting English and Spanish users across 7+ interactive games.
+
+Integrated speech recognition and audio feedback using ElevenLabs API, improving pronunciation accuracy tracking for 100+ users with speech impairments.
+
+AI-Powered Phishing URL Classifier
+Jan 2023 – March 2023
+
+Developed a phishing URL detection system in Python using supervised machine learning, extracting lexical and host-based features from 100K+ URLs, achieving 98%+ model accuracy.
+
+Deployed the model via Flask as a real-time inference API, enabling low-latency prediction for phishing threats and enhancing user cybersecurity.
+
+Technical Skills
+Programming: Python, Java, C/C++, SQL, JavaScript, HTML, CSS
+AI/ML & Data: Scikit-Learn, TensorFlow, PyTorch, OpenAI, Pandas, NumPy, Matplotlib, LLMs, GenAI
+Frameworks & Tools: Flask, React, Node.js, Redux, Tailwind CSS, Firebase, Firestore
+Cloud Deployment: AWS, Google Cloud, Azure, REST APIs, Flask APIs, Model Deployment (via Flask/Vercel)
+
+Education
+GPA: 3.8/4.0 — MS in Computer Science and Engineering, University of North Texas, Denton, TX – May 2025
+GPA: 3.7/4.0 — B.Tech in Computer Science and Engineering, GITAM University, Bengaluru, India – Aug 2023
