@@ -1,18 +1,17 @@
-import { useState } from 'react'
-import { Header } from './components/Header'
-import { HeroSection } from './components/HeroSection'
-import { ProjectShowcase } from './components/ProjectShowcase'
-import { YoutubeShowcase } from './components/YoutubeShowcase'
-import { ProjectsSection } from './components/ProjectsSection'
-import { ExperienceSection } from './components/ExperienceSection'
-import { SkillsSection } from './components/SkillsSection'
-import { ContactSection } from './components/ContactSection'
-import { Footer } from './components/Footer'
-import { ThemeProvider } from './components/ThemeProvider'
+import { Header } from './components/common/Header'
+import { HeroSection } from './components/home/HeroSection'
+import { ProjectShowcase } from './components/home/ProjectShowcase'
+import { YoutubeShowcase } from './components/home/YoutubeShowcase'
+import { ProjectsSection } from './components/home/ProjectsSection'
+import { ExperienceSection } from './components/home/ExperienceSection'
+import { SkillsSection } from './components/home/SkillsSection'
+import { ContactSection } from './components/home/ContactSection'
+import { Footer } from './components/common/Footer'
+import { ThemeProvider } from './context/ThemeContext' // Fixed: import ThemeProvider, not ThemeContext
 
 function App() {
   return (
-    <ThemeProvider>
+    <ThemeProvider> {/* Fixed: use ThemeProvider, not ThemeChecker */}
       <div className="min-h-screen bg-background text-foreground">
         <Header />
         <main>

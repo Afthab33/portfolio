@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail, FileText, ExternalLink } from 'lucide-react'
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 
 export function Footer() {
   const resumeLink = "https://drive.google.com/file/d/1ZzsEtDdGER8rRoCCX9zFI3qQSAgfj50z/view?usp=sharing";

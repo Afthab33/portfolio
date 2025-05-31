@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { Send, Copy, Check, Mail, MessageSquare, User } from 'lucide-react'
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 import confetti from 'canvas-confetti'
 import emailjs from '@emailjs/browser'
 

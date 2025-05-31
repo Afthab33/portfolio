@@ -1,6 +1,6 @@
-import { Card, CardContent } from './ui/card'
+import { Card, CardContent } from '../ui/card'
 import { ArrowRight, Github, ExternalLink, Globe } from 'lucide-react'
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 import { useRef, useEffect } from 'react'
 
 export function ProjectsSection() {

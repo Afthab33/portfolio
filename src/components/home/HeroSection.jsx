@@ -1,4 +1,4 @@
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 import { useEffect, useRef, useState } from 'react'
 import { ImageOff, Github, Linkedin, ExternalLink, Compass } from 'lucide-react'
 

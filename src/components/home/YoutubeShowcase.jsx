@@ -1,6 +1,6 @@
 import { ArrowUpRight, Youtube, Video, Users } from 'lucide-react'
 import { useEffect, useRef } from 'react'
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 
 export function YoutubeShowcase() {
   const componentRef = useRef(null);

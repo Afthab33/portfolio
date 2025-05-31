@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react"
 
 const ThemeContext = createContext({
-  theme: "light", // Changed default value to light
+  theme: "light",
   setTheme: () => null,
   toggleTheme: () => null,
 })
