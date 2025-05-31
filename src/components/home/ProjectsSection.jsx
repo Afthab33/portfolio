@@ -2,6 +2,8 @@ import { Card, CardContent } from '../ui/card'
 import { ArrowRight, Github, ExternalLink, Globe } from 'lucide-react'
 import { Button } from '../ui/button'
 import { useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { projectsData } from '../../data/projects' // Import the projects data
 
 export function ProjectsSection() {
   const sectionRef = useRef(null);
@@ -48,110 +50,38 @@ export function ProjectsSection() {
         </div>
         
         <div ref={sectionRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-          <ProjectCard 
-            title="Project-H: AI-Powered Health Platform"
-            description="Personalized health platform using React, Tailwind, Node.js, and OpenAI, helping users track fitness with 'Oats' AI coach and integrated biometric data analysis."
-            tags={["React", "OpenAI", "Node.js", "Machine Learning"]}
-            imageUrl="/projects/project-h/thumbnail.png"
-            liveUrl="https://projhealth.com"
-            githubUrl="https://github.com/Afthab33/project-h"
-            highlight={true}
-          />
-          
-          <ProjectCard 
-            title="Poster Accessibility Evaluation Tool"
-            description="Web app leveraging YOLOv10 and Gemini 1.5 Flash to assess academic posters for accessibility, providing actionable insights on WCAG compliance metrics."
-            tags={["YOLOv10", "Gemini 1.5", "Accessibility", "WCAG"]}
-            imageUrl="/projects/postera11y/thumbnail.png"
-            liveUrl="https://poster-a11y.vercel.app"
-            githubUrl="https://github.com/Afthab33/poster-evaluation-a11y"
-          />
-          
-          <ProjectCard 
-            title="Speech Quest - Speech Learning Platform"
-            description="Bilingual speech therapy app built with Angular and Firebase, featuring 7+ interactive games with speech recognition and audio feedback via ElevenLabs API."
-            tags={["Angular", "Firebase", "ElevenLabs API", "Speech Recognition"]}
-            imageUrl="/projects/speechapp/thumbnail.png"
-            liveUrl="https://speechquest.vercel.app"
-            githubUrl="https://github.com/Afthab33/speech-app"
-          />
-
-          <ProjectCard 
-            title="A11yGame - Accessibility Game Portal"
-            description="Multi-game accessibility learning portal built with React and Firebase, used by 200+ UNT students to engage with accessibility concepts interactively."
-            tags={["React", "Tailwind CSS", "Firebase", "Redux"]}
-            imageUrl="/projects/a11ygame/thumbnail.png"
-            liveUrl="https://a11ygamification.vercel.app"
-            githubUrl="https://github.com/Afthab33/a11yGame"
-          />
-          
-          <ProjectCard 
-            title="AI Powered Diet Plan Generator"
-            description="An OpenAI-powered web app that generates personalized diet plans based on user preferences and dietary restrictions."
-            tags={["OpenAI", "Django", "Python", "React"]}
-            imageUrl="/projects/dietapp/thumbnail.png"
-            liveUrl="https://diet-plan-app-woad.vercel.app/"
-            githubUrl="https://github.com/Afthab33/diet-plan-app"
-          />
-
-          <ProjectCard 
-            title="Doctor Finder"
-            description="Doctor Finder is a Next.js and Firebase-powered web app that connects patients with healthcare providers based on specialty, location, insurance, and more."
-            tags={["JavaScript", "React", "Next.js", "Web Development"]}
-            imageUrl="/projects/doctorfinder/thumbnail.png"
-            liveUrl="https://capstone2024-five.vercel.app/"
-            githubUrl="https://github.com/Afthab33/capstone2024"
-          />
-
-          <ProjectCard 
-            title="AetherLabs"
-            description="AetherLabs is an innovation hub building open-source, accessible tech through research, projects, and education."
-            tags={["Accessibility", "Open Source", "AI/ML", "Web Development"]}
-            imageUrl="/projects/aetherlabs/thumbnail.png"
-            liveUrl="https://aetherlabs.vercel.app/"
-            githubUrl="https://github.com/Afthab33/aetherlabs"
-          />
-
-          <ProjectCard 
-            title="Sleep & Lifestyle Insights"
-            description="An interactive web dashboard that analyzes wearable and self-reported data to uncover how daily habits like caffeine, exercise, and stress impact sleep quality and energy levels."
-            tags={["Data Visualization", "HealthTech", "Wearables", "D3.js"]}
-            imageUrl="/projects/sleepinsights/thumbnail.png"
-            liveUrl="https://sdv-project-website.vercel.app/"
-            githubUrl="https://github.com/Afthab33/sdv-project-website"
-          />
-          
-          <ProjectCard 
-            title="AI-Powered Phishing URL Classifier"
-            description="Phishing detection system using supervised ML, analyzing 100K+ URLs with lexical and host-based features to achieve 98%+ model accuracy."
-            tags={["Python", "Machine Learning", "Flask", "Cybersecurity"]}
-            imageUrl="/projects/phishingwebsite/thumbnail.png"
-            githubUrl="https://github.com/Afthab33/PhishBuster"
-          />
+          {/* Use data from projects.js */}
+          {projectsData.map((project) => (
+            <ProjectCard 
+              key={project.id}
+              project={project}
+              highlight={project.featured}
+            />
+          ))}
         </div>
       </div>
     </section>
   )
 }
 
-function ProjectCard({ title, description, tags, imageUrl, githubUrl, liveUrl, highlight = false }) {
+function ProjectCard({ project, highlight = false }) {
   return (
     <Card 
       className={`overflow-hidden transition-all hover:translate-y-[-4px] hover:shadow-lg focus-within:shadow-lg focus-within:border-primary/50 ${
         highlight ? 'border-primary/30 shadow-md' : 'border-primary/10'
       } h-full flex flex-col max-w-full mx-auto w-full`}
     >
-      {/* Clickable image area - improved accessibility */}
+      {/* Clickable image area */}
       <a 
-        href={liveUrl || githubUrl} 
+        href={project.demo || project.github} 
         target="_blank" 
         rel="noopener noreferrer"
         className="block h-32 sm:h-40 bg-muted overflow-hidden relative group focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-inset"
-        aria-label={`View ${title} ${liveUrl ? 'website' : 'project'}`}
+        aria-label={`View ${project.title} ${project.demo ? 'website' : 'project'}`}
       >
         <img 
-          src={imageUrl.replace('/public', '')} 
-          alt={`Screenshot of ${title}`} 
+          src={project.image} 
+          alt={`Screenshot of ${project.title}`} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-focus:scale-105" 
           loading="lazy"
         />
@@ -159,7 +89,7 @@ function ProjectCard({ title, description, tags, imageUrl, githubUrl, liveUrl, h
         {/* Overlay with preview text */}
         <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <div className="text-white font-medium px-3 py-1.5 text-xs sm:text-sm rounded-md border border-white/30 backdrop-blur-sm">
-            {liveUrl ? 'Visit Website' : 'View Project'}
+            {project.demo ? 'Visit Website' : 'View Project'}
           </div>
         </div>
         
@@ -175,7 +105,7 @@ function ProjectCard({ title, description, tags, imageUrl, githubUrl, liveUrl, h
       
       <CardContent className="p-3 sm:p-4 flex flex-col flex-1">
         <h3 className="text-sm sm:text-base font-medium mb-1 sm:mb-2 flex items-center line-clamp-1">
-          {title}
+          {project.title}
           {highlight && (
             <span className="ml-2 text-[10px] sm:text-xs bg-primary/20 text-primary px-1.5 sm:px-2 py-0.5 rounded-full font-medium shrink-0" aria-label="Featured project">
               Featured
@@ -183,29 +113,31 @@ function ProjectCard({ title, description, tags, imageUrl, githubUrl, liveUrl, h
           )}
         </h3>
         
-        <p className="text-[11px] sm:text-xs text-muted-foreground mb-2 sm:mb-3 line-clamp-3 flex-1">{description}</p>
+        <p className="text-[11px] sm:text-xs text-muted-foreground mb-2 sm:mb-3 line-clamp-3 flex-1">
+          {project.shortDescription}
+        </p>
         
         <div className="flex flex-wrap gap-1 sm:gap-1.5 mb-2 sm:mb-3" aria-label="Project technologies">
-          {tags.slice(0, 4).map((tag, index) => (
+          {project.technologies.slice(0, 4).map((tech, index) => (
             <span key={index} className="text-[9px] sm:text-[10px] bg-primary/10 text-primary px-1.5 sm:px-2 py-0.5 rounded-md font-medium whitespace-nowrap">
-              {tag}
+              {tech}
             </span>
           ))}
-          {tags.length > 4 && (
-            <span className="text-[9px] sm:text-[10px] text-muted-foreground px-1" aria-label={`And ${tags.length - 4} more technologies`}>
-              +{tags.length - 4} more
+          {project.technologies.length > 4 && (
+            <span className="text-[9px] sm:text-[10px] text-muted-foreground px-1" aria-label={`And ${project.technologies.length - 4} more technologies`}>
+              +{project.technologies.length - 4} more
             </span>
           )}
         </div>
         
         <div className="flex gap-1.5 sm:gap-2 mt-auto">
-          {liveUrl && (
+          {project.demo && (
             <Button variant="outline" size="sm" className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs h-7 sm:h-8 px-2 sm:px-2.5 group flex-1" asChild>
               <a 
-                href={liveUrl} 
+                href={project.demo} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                aria-label={`Visit ${title} website (opens in new tab)`}
+                aria-label={`Visit ${project.title} website (opens in new tab)`}
               >
                 <Globe className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-primary" aria-hidden="true" />
                 <span>Visit Site</span>
@@ -214,19 +146,27 @@ function ProjectCard({ title, description, tags, imageUrl, githubUrl, liveUrl, h
             </Button>
           )}
           
-          {githubUrl && (
+          {project.github && (
             <Button variant="outline" size="sm" className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs h-7 sm:h-8 px-2 sm:px-2.5 flex-1" asChild>
               <a 
-                href={githubUrl} 
+                href={project.github} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                aria-label={`View ${title} source code on GitHub (opens in new tab)`}
+                aria-label={`View ${project.title} source code on GitHub (opens in new tab)`}
               >
                 <Github className="h-2.5 w-2.5 sm:h-3 sm:w-3" aria-hidden="true" />
                 <span>View Code</span>
               </a>
             </Button>
           )}
+          
+          {/* Add Learn More button */}
+          <Button size="sm" className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs h-7 sm:h-8 px-2 sm:px-2.5 flex-1" asChild>
+            <Link to={`/projects/${project.slug}`}>
+              <span>Learn More</span>
+              <ArrowRight className="h-2.5 w-2.5 sm:h-3 sm:w-3" aria-hidden="true" />
+            </Link>
+          </Button>
         </div>
       </CardContent>
     </Card>
