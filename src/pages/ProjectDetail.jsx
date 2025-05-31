@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
+import { useEffect } from 'react'
 import { ArrowLeft, Github, ExternalLink, Calendar, Users, CheckCircle } from 'lucide-react'
 import { projectsData } from '../data/projects'
 import { Badge } from '../components/ui/badge'
@@ -8,6 +9,26 @@ import { Card, CardContent } from '../components/ui/card'
 export function ProjectDetail() {
   const { slug } = useParams()
   const project = projectsData.find(p => p.slug === slug)
+
+  // Add meta tags for better sharing
+  useEffect(() => {
+    if (project) {
+      document.title = `${project.title} - Aftab Hussain`
+      
+      const metaDescription = document.querySelector('meta[name="description"]')
+      if (metaDescription) {
+        metaDescription.setAttribute('content', project.shortDescription)
+      }
+      
+      const ogTitle = document.querySelector('meta[property="og:title"]')
+      const ogDescription = document.querySelector('meta[property="og:description"]')
+      const ogImage = document.querySelector('meta[property="og:image"]')
+      
+      if (ogTitle) ogTitle.setAttribute('content', project.title)
+      if (ogDescription) ogDescription.setAttribute('content', project.shortDescription)
+      if (ogImage) ogImage.setAttribute('content', `https://aftabhussain.vercel.app${project.image}`)
+    }
+  }, [project])
 
   if (!project) {
     return (
