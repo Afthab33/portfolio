@@ -142,7 +142,7 @@ export function HeroSection() {
             
             <div className="fade-element">
               <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-5 md:mb-7 max-w-2xl">
-                With experience mentoring 120+ students and delivering full-stack AI solutions, I share my journey through 
+                With experience mentoring students and delivering full-stack AI solutions, I share my journey through 
                 <a 
                   href="https://www.youtube.com/@Aftab_Hussain33" 
                   target="_blank" 
