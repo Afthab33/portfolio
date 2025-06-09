@@ -6,7 +6,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef(null);
-  const resumeLink = "https://drive.google.com/file/d/1ZzsEtDdGER8rRoCCX9zFI3qQSAgfj50z/view?usp=sharing";
+  const resumeLink = "https://drive.google.com/file/d/1dWDdMlDNUVS97awZUM4_WxQHl3OlSEUB/view?usp=drive_link";
 
   // Handle scroll effect for header
   useEffect(() => {

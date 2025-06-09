@@ -7,7 +7,7 @@ export function HeroSection() {
   const mobileImageRef = useRef(null);
   const contentRef = useRef(null);
   const [imageError, setImageError] = useState(false);
-  const resumeLink = "https://drive.google.com/file/d/1ZzsEtDdGER8rRoCCX9zFI3qQSAgfj50z/view?usp=sharing";
+  const resumeLink = "https://drive.google.com/file/d/1dWDdMlDNUVS97awZUM4_WxQHl3OlSEUB/view?usp=drive_link";
   
   useEffect(() => {
     // Initialize elements with opacity-0
