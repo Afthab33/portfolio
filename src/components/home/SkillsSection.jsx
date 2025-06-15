@@ -105,10 +105,13 @@ export function SkillsSection() {
   return (
     <section 
       id="skills" 
-      className="py-8 md:py-10"
+      className="py-8 md:py-10 relative overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background border-b border-border/20"
       aria-labelledby="skills-heading"
     >
-      <div className="container mx-auto px-4">
+      {/* Background decoration - exact same as WhoopShowcase */}
+      <div className="absolute top-0 left-1/2 w-[300px] h-[200px] bg-gradient-to-br from-primary/10 to-primary/5 rounded-full blur-3xl -translate-x-1/2 -z-10"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-6 md:mb-10">
           <p className="text-primary font-medium uppercase tracking-wider text-xs md:text-sm mb-1 md:mb-2" aria-hidden="true">
             Skills

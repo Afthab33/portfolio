@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Header } from './components/common/Header'
 import { HeroSection } from './components/home/HeroSection'
-import { ProjectShowcase } from './components/home/ProjectShowcase'
+import { WhoopShowcase } from './components/home/WhoopShowcase'
+import { ProjectHShowcase } from './components/home/ProjectHShowcase'
 import { YoutubeShowcase } from './components/home/YoutubeShowcase'
 import { ProjectsSection } from './components/home/ProjectsSection'
 import { ExperienceSection } from './components/home/ExperienceSection'
@@ -22,7 +23,8 @@ function App() {
               <Route path="/" element={
                 <>
                   <HeroSection />
-                  <ProjectShowcase />
+                  <WhoopShowcase />
+                  <ProjectHShowcase />
                   <ProjectsSection />
                   <SkillsSection />
                   <YoutubeShowcase />

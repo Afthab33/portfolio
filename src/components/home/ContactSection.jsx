@@ -75,14 +75,11 @@ export function ContactSection() {
     <section 
       id="contact" 
       ref={sectionRef}
-      className="py-8 md:py-10 relative overflow-hidden bg-gradient-to-b from-background to-secondary/10"
+      className="py-8 md:py-10 relative overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background border-b border-border/20"
       aria-labelledby="contact-heading"
     >
-      {/* Background blur elements - simplified */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className={`absolute top-0 left-0 w-40 h-40 bg-primary/5 rounded-full blur-3xl transition-opacity duration-1000 ${sectionAnimated ? 'opacity-40' : 'opacity-0'}`}></div>
-        <div className={`absolute bottom-0 right-0 w-60 h-60 bg-primary/10 rounded-full blur-3xl transition-opacity duration-1000 delay-300 ${sectionAnimated ? 'opacity-40' : 'opacity-0'}`}></div>
-      </div>
+      {/* Background decoration - exact same as WhoopShowcase */}
+      <div className="absolute top-0 left-1/2 w-[300px] h-[200px] bg-gradient-to-br from-primary/10 to-primary/5 rounded-full blur-3xl -translate-x-1/2 -z-10"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Compact header */}

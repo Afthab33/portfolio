@@ -1,48 +1,99 @@
 export const projectsData = [
   {
-    id: 1,
-    slug: "project-h",
-    title: "Project-H: AI-Powered Health Platform",
-    shortDescription: "Personalized health platform using React, Tailwind, Node.js, and OpenAI, helping users track fitness with 'Oats' AI coach and integrated biometric data analysis.",
-    fullDescription: "An integrated health platform that combines symptom analysis, mental health support, and personalized recommendations using advanced AI algorithms.",
-    image: "/projects/project-h/thumbnail.png",
-    technologies: ["React", "OpenAI", "Node.js", "Machine Learning"],
-    github: "https://github.com/Afthab33/project-h",
-    demo: "https://projhealth.com",
-    category: "Web App",
+    id: 10,
+    slug: "whoop-redesign",
+    title: "WHOOP Web App Redesign with AI Coach",
+    shortDescription: "Reimagined WHOOP's web platform with modern UI/UX, AI-powered coaching (GPT-4o + RAG), and enhanced data visualization bridging the gap between mobile excellence and web experience.",
+    fullDescription: "A comprehensive redesign of WHOOP's web platform that combines modern React-based UI/UX with AI-powered coaching capabilities, delivering personalized fitness insights through advanced data visualization.",
+    image: "/projects/whoop/thumbnail.png",
+    technologies: ["React", "Tailwind CSS", "Recharts", "D3.js", "Flask", "OpenAI GPT-4o", "RAG", "Vercel"],
+    github: "https://github.com/Afthab33/whoop-redesign",
+    demo: "https://whoopapp.vercel.app",
+    category: "Product Redesign",
     featured: true,
     
-    motivation: "Healthcare accessibility is a global challenge. I wanted to create a platform that provides immediate health insights and mental health support, making healthcare guidance available 24/7 to anyone with internet access.",
+    motivation: "WHOOP's mobile experience is exceptional, but its web app lacks parity. As someone passionate about fitness tech, I wanted to challenge myself to bridge that gap and demonstrate how I could contribute to WHOOP's mission using my full-stack + AI skills.",
     
     challenges: [
-      "Training accurate AI models for symptom analysis",
-      "Ensuring medical accuracy and safety",
-      "Creating intuitive health data visualization",
-      "Implementing secure patient data handling"
+      "Replicating WHOOP's sophisticated mobile design language for web",
+      "Integrating AI coaching that provides meaningful, contextual insights",
+      "Creating accurate health data visualizations without access to real WHOOP data",
+      "Implementing RAG for personalized fitness recommendations",
+      "Ensuring responsive design across all device types"
     ],
     
     solutions: [
-      "Developed custom ML models trained on verified medical datasets",
-      "Implemented multiple validation layers and disclaimer systems",
-      "Created interactive dashboards with clear health metrics",
-      "Used end-to-end encryption for all sensitive data"
+      "Conducted detailed analysis of WHOOP's mobile app to extract design principles",
+      "Built custom AI coach using GPT-4o with RAG for context-aware responses",
+      "Generated realistic synthetic WHOOP-style datasets for demonstration",
+      "Implemented comprehensive component library following WHOOP's design system",
+      "Created responsive layouts optimized for both desktop and mobile experiences"
     ],
     
     features: [
-      "AI-powered symptom checker with 85% accuracy",
-      "Mental health assessment and support",
-      "Personalized health recommendations",
-      "Health metrics tracking and visualization",
-      "Emergency contact integration"
+      "Modern UI/UX redesign inspired by WHOOP's mobile experience",
+      "AI Coach powered by GPT-4o with Retrieval-Augmented Generation (RAG)",
+      "Interactive sleep, recovery, and strain data visualizations",
+      "Responsive design optimized for desktop and mobile",
+      "Real-time data analysis and personalized insights",
+      "Recovery bar charts with color-coded HRV, RHR, and Sleep metrics",
+      "Sleep efficiency line charts and restorative sleep visualizations",
+      "Time-in-bed and sleep need comparison tools",
+      "Interactive graph exploration with detailed breakdowns"
     ],
     
-    results: "Platform serves 1000+ active users with 85% accuracy in symptom analysis and 90% user satisfaction rate.",
+    results: "Project gained significant attention with 5K+ LinkedIn views and was directly shared with WHOOP team members. Used as a talking point in job interviews to demonstrate initiative and technical depth. Successfully showcased how AI can drive meaningful user engagement in fitness platforms.",
     
-    learnings: "Building healthcare applications requires balancing innovation with responsibility. I learned about medical data standards, AI ethics, and the importance of clear communication about AI limitations.",
+    learnings: "This project taught me about product thinking, the importance of design consistency across platforms, and how to effectively integrate AI into user experiences. I learned about health data visualization best practices and the challenges of creating meaningful AI interactions in the fitness domain.",
     
-    timeline: "8 months",
-    teamSize: "Solo project with medical advisor consultation"
+    timeline: "2 Weeks",
+    teamSize: "Solo project with design inspiration from WHOOP's existing products"
   },
+  
+  {
+  "id": 1,
+  "slug": "project-h",
+  "title": "Project-H: AI-Powered Health & Fitness Assistant",
+  "shortDescription": "A personalized health platform using React, Flask, and OpenAI, offering adaptive fitness, diet, and sleep insights through biometric data and the 'Oats' AI coach.",
+  "fullDescription": "Project-H is a full-stack AI-driven health assistant that integrates wearable data from Apple Watch and WHOOP to generate personalized fitness, diet, and sleep plans. Powered by LLMs and built for real-time feedback, it helps users improve their health with smart coaching and intuitive visualizations.",
+  "image": "/projects/project-h/thumbnail.png",
+  "technologies": ["React", "Flask", "OpenAI", "Tailwind CSS", "Machine Learning", "Apple HealthKit", "RAG"],
+  "github": "https://github.com/Afthab33/project-h",
+  "demo": "https://projhealth.com",
+  "category": "Web App",
+  "featured": true,
+
+  "motivation": "I wanted to create an intelligent health companion that merges AI with real biometric data. With my family in healthcare and my own interest in fitness, I aimed to make a platform that provides actionable insights using wearables and AI accessible anytime, anywhere.",
+
+  "challenges": [
+    "Parsing and visualizing Apple Health XML data accurately",
+    "Designing a responsive UI for sleep, workout, and nutrition insights",
+    "Implementing multi-turn dialogue using LLMs for personalized coaching",
+    "Building logic to adapt suggestions based on biometric data"
+  ],
+
+  "solutions": [
+    "Created custom XML parser to extract and clean Apple Health sleep data",
+    "Used React + Recharts to visualize recovery, sleep, and performance graphs",
+    "Integrated OpenAI GPT-4o with RAG for AI-based coaching via 'Oats'",
+    "Implemented rule-based logic and synthetic datasets for real-time personalization"
+  ],
+
+  "features": [
+    "AI Coach 'Oats' answers health queries using LLM + wearable data",
+    "Sleep insights with REM/Core/Deep pie charts and interactive timelines",
+    "Custom meal and workout plans based on user goals and biometrics",
+    "Daily updates using synthetic WHOOP-style data for demo purposes",
+    "Multi-stage insights dashboard with modular design"
+  ],
+
+  "results": "Demo version successfully simulates real-world use cases. Multiple users tested AI coach and insights modules with highly positive feedback for usability and content accuracy. Recognized by mentors and peers for bridging tech with health.",
+  
+  "learnings": "I gained hands-on experience working with wearable data, learned best practices for AI integration in real-time systems, and understood the complexity of delivering user-centric health advice responsibly using generative AI.",
+
+  "timeline": "8 weeks",
+  "teamSize": "Solo developer – built entirely by me, with occasional backend help from my friend Vinay"
+},
 
   {
     id: 2,

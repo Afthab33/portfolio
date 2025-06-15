@@ -1,79 +1,21 @@
 import { Button } from '../ui/button'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { ImageOff, Github, Linkedin, ExternalLink, Compass } from 'lucide-react'
 
 export function HeroSection() {
-  const imageRef = useRef(null);
-  const mobileImageRef = useRef(null);
-  const contentRef = useRef(null);
   const [imageError, setImageError] = useState(false);
   const resumeLink = "https://drive.google.com/file/d/1dWDdMlDNUVS97awZUM4_WxQHl3OlSEUB/view?usp=drive_link";
-  
-  useEffect(() => {
-    // Initialize elements with opacity-0
-    if (contentRef.current) {
-      const elements = contentRef.current.querySelectorAll('.fade-element');
-      elements.forEach(el => {
-        el.classList.add('opacity-0');
-      });
-    }
-    
-    // Set up fade animation observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('opacity-0');
-          entry.target.classList.add('transition-opacity', 'duration-1000', 'opacity-100');
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    // For content elements with staggered fade
-    const contentFadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const elements = entry.target.querySelectorAll('.fade-element');
-          elements.forEach((el, index) => {
-            setTimeout(() => {
-              el.classList.remove('opacity-0');
-              el.classList.add('transition-opacity', 'duration-1000', 'opacity-100');
-            }, 150 * index); // Stagger the animations
-          });
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    // Observe both desktop and mobile images
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
-    }
-    
-    if (mobileImageRef.current) {
-      observer.observe(mobileImageRef.current);
-    }
-    
-    if (contentRef.current) {
-      contentFadeObserver.observe(contentRef.current);
-    }
-    
-    return () => {
-      if (imageRef.current) observer.unobserve(imageRef.current);
-      if (mobileImageRef.current) observer.unobserve(mobileImageRef.current);
-      if (contentRef.current) contentFadeObserver.unobserve(contentRef.current);
-    };
-  }, []);
 
   return (
-    <section className="pt-24 md:pt-28 pb-8 md:pb-12 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-0 right-0 w-[80%] md:w-[600px] h-[400px] md:h-[600px] bg-gradient-to-br from-primary/5 to-primary/10 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-[60%] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-tr from-primary/5 to-primary/10 rounded-full blur-3xl -z-10"></div>
+    <section className="pt-24 md:pt-28 pb-8 md:pb-12 relative overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background border-b border-border/20">
+      {/* Background decoration - exact same as WhoopShowcase */}
+      <div className="absolute top-0 left-1/2 w-[300px] h-[200px] bg-gradient-to-br from-primary/10 to-primary/5 rounded-full blur-3xl -translate-x-1/2 -z-10"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6 md:gap-10 items-center">
           {/* Mobile profile image with enhanced design */}
           <div className="block lg:hidden order-1 mx-auto mb-8">
-            <div ref={mobileImageRef} className="w-[220px] sm:w-[280px] opacity-0">
+            <div className="w-[220px] sm:w-[280px]">
               <div className="relative">
                 {/* Background design elements */}
                 <div className="absolute -top-3 -right-3 w-24 h-24 bg-primary/10 rounded-full blur-md -z-10"></div>
@@ -112,10 +54,9 @@ export function HeroSection() {
             </div>
           </div>
           
-          {/* Content Section - unchanged */}
-          <div ref={contentRef} className="max-w-3xl order-2 lg:order-1">
-            {/* Content remains the same */}
-            <div className="fade-element">
+          {/* Content Section */}
+          <div className="max-w-3xl order-2 lg:order-1">
+            <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-4 md:mb-5">
                 Building a <span className="relative inline-block">
                   smarter world
@@ -124,7 +65,7 @@ export function HeroSection() {
               </h1>
             </div>
             
-            <div className="fade-element">
+            <div>
               <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-4 md:mb-5 max-w-2xl">
                 I'm an AI Full-Stack Developer and Product Engineer, founder of 
                 <a 
@@ -140,7 +81,7 @@ export function HeroSection() {
               </p>
             </div>
             
-            <div className="fade-element">
+            <div>
               <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-5 md:mb-7 max-w-2xl">
                 With experience mentoring students and delivering full-stack AI solutions, I share my journey through 
                 <a 
@@ -156,7 +97,7 @@ export function HeroSection() {
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-3 md:gap-4 mt-4 md:mt-6 fade-element">
+            <div className="flex flex-wrap gap-3 md:gap-4 mt-4 md:mt-6">
               <Button variant="outline" className="flex gap-2 items-center border-primary/20 hover:bg-primary/5 group h-9 md:h-10 text-sm md:text-base" asChild>
                 <a href="#projects" className="px-3 md:px-5">
                   <Compass className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary group-hover:rotate-45 transition-transform duration-300" />
@@ -170,7 +111,7 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <div className="mt-6 md:mt-8 pt-4 md:pt-5 border-t border-border/40 fade-element">
+            <div className="mt-6 md:mt-8 pt-4 md:pt-5 border-t border-border/40">
               <div className="flex items-center gap-3 md:gap-4">
                 <a 
                   href="https://github.com/Afthab33" 
@@ -211,7 +152,7 @@ export function HeroSection() {
           </div>
           
           {/* Desktop Image Section with enhanced design */}
-          <div ref={imageRef} className="hidden lg:block order-1 lg:order-2 w-full max-w-[360px] mx-auto lg:mx-0 opacity-0">
+          <div className="hidden lg:block order-1 lg:order-2 w-full max-w-[360px] mx-auto lg:mx-0">
             <div className="relative">
               {/* Background design elements */}
               <div className="absolute -top-4 -right-4 w-32 h-32 bg-primary/10 rounded-full blur-md -z-10"></div>

@@ -1,7 +1,7 @@
 import { ArrowUpRight, Users, ExternalLink } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 
-export function ProjectShowcase() {
+export function ProjectHShowcase() {
   const componentRef = useRef(null);
   
   useEffect(() => {
@@ -24,9 +24,12 @@ export function ProjectShowcase() {
 
   return (
     <section 
-      className="py-8 relative z-10 overflow-hidden border-b border-border/20"
+      className="py-8 relative z-10 overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background border-b border-border/20"
       aria-labelledby="flagship-project-heading"
     >
+      {/* Background decoration - exact same as WhoopShowcase */}
+      <div className="absolute top-0 left-1/2 w-[300px] h-[200px] bg-gradient-to-br from-primary/10 to-primary/5 rounded-full blur-3xl -translate-x-1/2 -z-10"></div>
+      
       <div className="container mx-auto px-4 relative z-10">
         <div ref={componentRef} className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-6 md:gap-8 items-center">
           {/* Image gallery - more responsive */}
@@ -109,7 +112,7 @@ export function ProjectShowcase() {
                 
                 <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
                   <Users size={14} className="mr-1.5 text-[#3E7B27]" aria-hidden="true" />
-                  <span>200+ users and counting</span>
+                  <span>300+ users and counting</span>
                 </div>
               </div>
             </div>
