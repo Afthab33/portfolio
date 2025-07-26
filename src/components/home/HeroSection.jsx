@@ -4,7 +4,7 @@ import { ImageOff, Github, Linkedin, ExternalLink, Compass } from 'lucide-react'
 
 export function HeroSection() {
   const [imageError, setImageError] = useState(false);
-  const resumeLink = "https://drive.google.com/file/d/1dWDdMlDNUVS97awZUM4_WxQHl3OlSEUB/view?usp=drive_link";
+  const resumeLink = "https://drive.google.com/file/d/1D3vG4VdkxkC0LQo7ZQUdSVuBQDHtir33/view?usp=sharing";
 
   return (
     <section className="pt-24 md:pt-28 pb-8 md:pb-12 relative overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background border-b border-border/20">
