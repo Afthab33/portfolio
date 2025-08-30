@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail, FileText, ExternalLink } from 'lucide-react'
 import { Button } from '../ui/button'
 
 export function Footer() {
-  const resumeLink = "https://drive.google.com/file/d/1D3vG4VdkxkC0LQo7ZQUdSVuBQDHtir33/view?usp=sharing";
+  const resumeLink = "https://drive.google.com/file/d/1qsE9L0FZ_T94UyS-glWlENRGsJthARTs/view?usp=sharing";
   const currentYear = new Date().getFullYear();
   
   return (

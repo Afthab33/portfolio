@@ -24,7 +24,7 @@ export function WhoopShowcase() {
                 id="whoop-project-heading"
                 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text"
               >
-                WHOOP Web App Reduild with AI Coach
+                WHOOP Web App Rebuild with AI Coach
               </h2>
               
               {/* New Project Label */}

@@ -4,7 +4,7 @@ import { ImageOff, Github, Linkedin, ExternalLink, Compass } from 'lucide-react'
 
 export function HeroSection() {
   const [imageError, setImageError] = useState(false);
-  const resumeLink = "https://drive.google.com/file/d/1D3vG4VdkxkC0LQo7ZQUdSVuBQDHtir33/view?usp=sharing";
+  const resumeLink = "https://drive.google.com/file/d/1qsE9L0FZ_T94UyS-glWlENRGsJthARTs/view?usp=sharing";
 
   return (
     <section className="pt-24 md:pt-28 pb-8 md:pb-12 relative overflow-hidden bg-gradient-to-b from-background via-primary/5 to-background border-b border-border/20">
@@ -67,33 +67,7 @@ export function HeroSection() {
             
             <div>
               <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-4 md:mb-5 max-w-2xl">
-                I'm an AI Full-Stack Developer and Product Engineer, founder of 
-                <a 
-                  href="https://projhealth.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="relative inline-flex items-center font-medium text-primary mx-1.5 group"
-                >
-                  <span className="border-b border-primary/30 group-hover:border-primary transition-colors">Project-H</span>
-                  <ExternalLink className="h-3 w-3 ml-0.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-                building intelligent, user-focused products that bridge software, data, and behavior.
-              </p>
-            </div>
-            
-            <div>
-              <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-5 md:mb-7 max-w-2xl">
-                With experience mentoring students and delivering full-stack AI solutions, I share my journey through 
-                <a 
-                  href="https://www.youtube.com/@Aftab_Hussain33" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="relative inline-flex items-center font-medium text-primary mx-1.5 group"
-                >
-                  <span className="border-b border-primary/30 group-hover:border-primary transition-colors">YouTube</span>
-                  <ExternalLink className="h-3 w-3 ml-0.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-                videos and podcasts.
+                I'm a Full Stack Gen AI Engineer building intelligent, user-focused products that bridge software, data, and behavior.
               </p>
             </div>
             
